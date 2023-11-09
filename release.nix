@@ -1,7 +1,14 @@
 let
   sources = import ./nix/sources.nix {};
   pkgs = import sources.nixpkgs {
-    overlays = [ (import ./overlay.nix) ];
+    overlays = [
+      (import ./overlay.nix)
+      (import ./overlaya.nix)
+      (import ./overlayb.nix)
+      (import ./overlayc.nix)
+      (import ./overlayd.nix)
+      (import ./overlay-myapp.nix)
+    ];
   };
 in
 {
